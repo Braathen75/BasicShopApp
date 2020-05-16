@@ -11,8 +11,8 @@ const flash = require('connect-flash');
 const pageNotFoundRoute = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_STORE_URI = 'mongodb+srv://mehdi:Fply8pDR6ABS6dSO@cluster0-vyods.mongodb.net/session?retryWrites=true&w=majority';
-const SHOPDB_URI = 'mongodb+srv://mehdi:Fply8pDR6ABS6dSO@cluster0-vyods.mongodb.net/shop?retryWrites=true&w=majority';
+const MONGODB_STORE_URI = process.env.MONGODB_STORE_URI;
+const SHOPDB_URI = process.env.SHOPDB_URI;
 
 const app = express();
 const store = new sessionStore({
